@@ -13,9 +13,9 @@ function App() {
       {/* {isLoading && <Loader />} */}
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="#/products/:id" element={<ProductDetail />} />
-        <Route path="#/login" element={<Login />} />
-        <Route path="#/purchases" element={<Purchase />} />
+        <Route path="products/:id" element={<ProductDetail />} />
+        <Route path="login" element={<Login />} />
+        <Route path="purchases" element={<Purchase />} />
       </Routes>
     </BrowserRouter>
   );
