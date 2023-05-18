@@ -122,8 +122,18 @@ nav {
   padding: 10px;
 }
 
-nav i {
+.fa-user,
+.fa-bag-shopping,
+.fa-cart-shopping {
+  color: #370c94;
+}
+
+.fa-moon {
   color: blue;
+}
+
+.fa-sun {
+  color: yellow;
 }
 
 .navbar-left,
@@ -142,7 +152,7 @@ nav i {
 
 .navbar-icon {
   font-size: 30px;
-  margin-right: 25px;
+  margin: 0 55px;
   text-decoration: none;
 }
 
@@ -166,12 +176,16 @@ nav i {
   border-radius: 100%;
 }
 
+.navbar-right button {
+  background-color: #333;
+}
+
 .navbar-dark {
   background-color: #333;
   color: white;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 700px) {
   nav {
     padding: 5px;
   }
@@ -181,7 +195,7 @@ nav i {
   }
   .navbar-icon {
     font-size: 25px;
-    margin-right: 20px;
+    margin: 0 10px;
   }
   .dark-mode-button,
   .light-mode-button {
