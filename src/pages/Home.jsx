@@ -1,6 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getProductsThunk } from "../store/slices/products.silce";
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const products = useSelector((state) => state.products);
+
+  useEffect(() => {
+    dispatch(getProductsThunk());
+  }, []);
+
   const [categoriesVisible, setCategoriesVisible] = useState(true);
 
   useEffect(() => {
@@ -57,12 +66,28 @@ const Home = () => {
         )}
       </div>
       <div className="products">
-        <h2>Productos</h2>
-        <p>Producto 1</p>
-        <p>Producto 2</p>
-        <p>Producto 3</p>
-        <p>Producto 4</p>
-        <p>Producto 5</p>
+        {products.map((productItem) => (
+          <div className="home_products" key={productItem.id}>
+            <div>
+              <h2>{productItem.title}</h2>
+            </div>
+            <div>
+              <img src={productItem.productImgs[0]} alt="" />
+            </div>
+            <div className="home_price_cart">
+              <div>
+                <h3>
+                  Price <br /> <span>${productItem.price}</span>
+                </h3>
+              </div>
+              <div>
+                <button>
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );
