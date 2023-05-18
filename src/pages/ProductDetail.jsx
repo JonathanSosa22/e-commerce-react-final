@@ -38,7 +38,9 @@ const ProductDetail = () => {
             <p>${product.price}</p>
           </div>
           <div>
-            <button>Add to cart</button>
+            <button className="add_cart_button">
+              Add to cart <i class="fa-solid fa-cart-shopping"></i>
+            </button>
           </div>
         </div>
       </div>
