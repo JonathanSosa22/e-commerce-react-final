@@ -69,10 +69,10 @@ const Home = () => {
         {products.map((productItem) => (
           <div className="home_products" key={productItem.id}>
             <div>
-              <h2>{productItem.title}</h2>
+              <img src={productItem.productImgs[0]} alt="" />
             </div>
             <div>
-              <img src={productItem.productImgs[0]} alt="" />
+              <h2>{productItem.title}</h2>
             </div>
             <div className="home_price_cart">
               <div>
