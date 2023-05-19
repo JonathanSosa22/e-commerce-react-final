@@ -668,7 +668,7 @@ nav {
     gap: 5px;
   }
   .related_product div {
-    width: 380px;
+    width: 100%;
   }
 }
 
