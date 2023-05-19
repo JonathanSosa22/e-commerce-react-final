@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getProductsThunk } from "../store/slices/products.silce";
 import { Link } from "react-router-dom";
+import ImageChange from "../components/ImageChange";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -39,22 +40,25 @@ const Home = () => {
     display: categoriesVisible ? "block" : "none",
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="home">
       <div className="category">
         <button onClick={toggleCategoriesVisibility}>
           {categoriesVisible ? (
-            <div>
-              <h3>
-                Category <i className="fa-sharp fa-solid fa-caret-up"></i>
-              </h3>
-            </div>
+            <h3>
+              Category <i className="fa-sharp fa-solid fa-caret-up"></i>
+            </h3>
           ) : (
-            <div>
-              <h3>
-                Category <i className="fa-sharp fa-solid fa-caret-down"></i>
-              </h3>
-            </div>
+            <h3>
+              Category <i className="fa-sharp fa-solid fa-caret-down"></i>
+            </h3>
           )}
         </button>
         {categoriesVisible && (
@@ -71,26 +75,22 @@ const Home = () => {
           <Link
             className="product_link"
             to={`/products/${productItem.id}`}
+            onClick={scrollToTop}
             key={productItem.id}
           >
             <div className="home_products">
-              <div>
-                <img src={productItem.productImgs[0]} alt="" />
-              </div>
-              <div>
-                <h2>{productItem.title}</h2>
-              </div>
+              <ImageChange
+                initialImage={productItem?.productImgs[0]}
+                alternativeImage={productItem?.productImgs[1]}
+              />
+              <h2>{productItem.title}</h2>
               <div className="home_price_cart">
-                <div>
-                  <h3>
-                    Price <br /> <span>${productItem.price}</span>
-                  </h3>
-                </div>
-                <div>
-                  <button>
-                    <i class="fa-solid fa-cart-shopping"></i>
-                  </button>
-                </div>
+                <h3>
+                  Price <br /> <span>${productItem?.price}</span>
+                </h3>
+                <button>
+                  <i class="fa-solid fa-cart-shopping"></i>
+                </button>
               </div>
             </div>
           </Link>

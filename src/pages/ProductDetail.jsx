@@ -23,6 +23,13 @@ const ProductDetail = () => {
       productItem.id !== product.id
   );
 
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="detail_container">
       <div className="detail_link_home">
@@ -53,7 +60,11 @@ const ProductDetail = () => {
         <div className="related_product">
           {relatedProduct.map((related) => (
             <div key={related.id}>
-              <Link className="product_link" to={`/products/${related.id}`}>
+              <Link
+                onClick={scrollToTop}
+                className="product_link"
+                to={`/products/${related.id}`}
+              >
                 <h2>{related?.title}</h2>
                 <img
                   className="related_img"
