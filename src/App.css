@@ -668,7 +668,11 @@ nav {
     gap: 5px;
   }
   .related_product div {
-    width: 100%;
+    width: 95%;
+  }
+  .related_img {
+    width: 250px;
+    height: 200px;
   }
 }
 
