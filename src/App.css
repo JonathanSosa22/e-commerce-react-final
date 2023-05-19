@@ -569,6 +569,7 @@ nav {
 
 .product_detail {
   margin: 5px auto;
+  padding: 0 10px;
   display: grid;
   grid-template-columns: 50% 1fr;
   gap: 20px;
