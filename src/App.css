@@ -229,12 +229,21 @@ nav {
 .category {
   width: 200px;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category div:nth-child(2) h3 {
+  margin: 10px 0;
 }
 
 .category button {
-  width: 100%;
+  width: 80%;
   height: 25px;
   margin: 10px 0;
+  border-radius: 20px;
+  border: none;
 }
 
 .category button i {
@@ -620,6 +629,35 @@ nav {
 .product_detail_container p {
   padding-left: 20px;
   padding-top: 5px;
+}
+
+.related_h2 {
+  padding: 0 0 10px 20px;
+  color: red;
+}
+
+.related_product {
+  padding: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.related_product div {
+  padding: 10px;
+  border: 1px solid rgb(166, 166, 166);
+  border-radius: 20px;
+}
+
+.related_img {
+  background-color: white;
+  width: 350px;
+  height: 250px;
+  margin: 20px auto;
+  border-radius: 20px;
+  object-fit: contain;
 }
 
 @media (max-width: 700px) {
